@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo rk3288-user
-add_lunch_combo rk3288-userdebug
-add_lunch_combo rk3288_box-userdebug
-add_lunch_combo rk3288-eng
+add_lunch_combo aosp_rk3288-user
+add_lunch_combo aosp_rk3288-userdebug
+add_lunch_combo aosp_rk3288-eng

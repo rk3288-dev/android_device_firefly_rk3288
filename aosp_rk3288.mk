@@ -13,16 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/rockchip/rk3288/rk3288.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-PRODUCT_NAME := rk3288_box
-PRODUCT_DEVICE := rk3288_box
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := rk3288_box
-PRODUCT_MANUFACTURER := rockchip
+# Inherit device configuration
+$(call inherit-product, device/firefly/rk3288/device.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.version = 1.0.0 \
-    ro.product.ota.host = www.rockchip.com:2300
+PRODUCT_NAME := aosp_rk3288
+PRODUCT_DEVICE := rk3288
+PRODUCT_BRAND := Firefly
+PRODUCT_MODEL := RK3288
+PRODUCT_MANUFACTURER := Rockchip
 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_PRODUCT=RK3288 \
+    TARGET_DEVICE=RK3288
+
+$(call inherit-product-if-exists, vendor/firefly/rk3288/device-vendor.mk)

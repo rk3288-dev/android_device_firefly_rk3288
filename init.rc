@@ -91,6 +91,8 @@ on init
     # memory control cgroup
     mkdir /dev/memcg 0700 root system
     mount cgroup none /dev/memcg memory
+    # for bd
+    mkdir /mnt/iso 0777 system system
 
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/kernel/hung_task_timeout_secs 0
@@ -564,7 +566,7 @@ service drm /system/bin/drmserver
 
 service media /system/bin/mediaserver
     class main
-    user media
+    user system
     group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm radio
     ioprio rt 4
 
@@ -596,6 +598,12 @@ service installd /system/bin/installd
 service flash_recovery /system/bin/install-recovery.sh
     class main
     seclabel u:r:install_recovery:s0
+    oneshot
+
+service boot_linux /system/bin/boot-linux.sh
+    class main
+    seclabel u:r:install_recovery:s0
+    disabled
     oneshot
 
 service racoon /system/bin/racoon
@@ -634,6 +642,11 @@ service mdnsd /system/bin/mdnsd
     oneshot
 
 service pre-recovery /system/bin/uncrypt
+    class main
+    disabled
+    oneshot
+
+service iso_operate /system/bin/iso
     class main
     disabled
     oneshot

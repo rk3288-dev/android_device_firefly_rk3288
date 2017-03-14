@@ -14,41 +14,24 @@
 # limitations under the License.
 #
 
+$(call inherit-product, device/rockchip/common/common.mk)
+
+$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+
 PRODUCT_PACKAGES += \
     Launcher3
 
-#$_rbox_$_modify_$_zhengyang: add displayd
 PRODUCT_PACKAGES += \
     displayd
 
-#enable this for support f2fs with data partion
-#BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-# This ensures the needed build tools are available.
-# TODO: make non-linux builds happy with external/f2fs-tool; system/extras/f2fs_utils
-#ifeq ($(HOST_OS),linux)
-#TARGET_USERIMAGES_USE_F2FS := true
-#endif
-
-ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
 BOARD_SEPOLICY_DIRS += \
-      device/rockchip/rk3288/rk3288_box/sepolicy
+    $(LOCAL_PATH)/sepolicy
+
 BOARD_SEPOLICY_UNION += \
-      service_contexts
+    service_contexts
+
 PRODUCT_COPY_FILES += \
-    device/rockchip/rk3288/rk3288_box/init.rc:root/init.rc \
-    device/rockchip/rk3288/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \
-    device/rockchip/rk3288/rk3288_box/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc
-else
-  PRODUCT_COPY_FILES += \
-    device/rockchip/rk3288/init.rc:root/init.rc \
-    device/rockchip/rk3288/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \
-    device/rockchip/rk3288/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc
-endif
+    $(LOCAL_PATH)/init.rc:root/init.rc \
+    $(LOCAL_PATH)/fstab.rk30board:root/fstab.rk30board
 
-# setup dalvik vm configs.
-$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
-
-$(call inherit-product-if-exists, vendor/rockchip/rk3288/device-vendor.mk)
-
-$(call inherit-product-if-exists, vendor/rockchip/firefly/firefly.mk)
+$(call inherit-product, device/rockchip/common/samba/rk31_samba.mk)
