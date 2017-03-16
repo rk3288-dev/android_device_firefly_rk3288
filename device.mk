@@ -21,9 +21,6 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 PRODUCT_PACKAGES += \
     Launcher3
 
-PRODUCT_PACKAGES += \
-    displayd
-
 BOARD_SEPOLICY_DIRS += \
     $(LOCAL_PATH)/sepolicy
 
@@ -31,7 +28,6 @@ BOARD_SEPOLICY_UNION += \
     service_contexts
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.rc:root/init.rc \
     $(LOCAL_PATH)/fstab.rk30board:root/fstab.rk30board
 
 $(call inherit-product, device/rockchip/common/samba/rk31_samba.mk)

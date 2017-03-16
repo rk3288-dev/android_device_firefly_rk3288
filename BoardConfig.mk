@@ -63,6 +63,3 @@ MALLOC_IMPL := dlmalloc
 BOARD_SENSOR_ST := false
 BOARD_SENSOR_MPU := true
 BOARD_USES_GENERIC_INVENSENSE := false
-
-# Copy RK3288 own init.rc file
-TARGET_PROVIDES_INIT_RC := true
