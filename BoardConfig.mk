@@ -37,6 +37,10 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a15
 TARGET_CPU_SMP := true
 
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/firefly/rk3288
+TARGET_KERNEL_CONFIG := firefly-rk3288_defconfig
+
 # Battery
 BOARD_HAS_BATTERY := false
 
