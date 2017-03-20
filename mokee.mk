@@ -1,5 +1,5 @@
 #
-# Copyright 2014 The Android Open Source Project
+# Copyright 2014 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,19 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_rk3288-user
-add_lunch_combo aosp_rk3288-userdebug
-add_lunch_combo aosp_rk3288-eng
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/firefly/rk3288/device.mk)
+
+PRODUCT_NAME := mk_rk3288
+PRODUCT_DEVICE := rk3288
+PRODUCT_BRAND := Firefly
+PRODUCT_MODEL := RK3288
+PRODUCT_MANUFACTURER := Rockchip
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_PRODUCT=RK3288 \
+    TARGET_DEVICE=RK3288
+
+$(call inherit-product-if-exists, vendor/firefly/rk3288/device-vendor.mk)

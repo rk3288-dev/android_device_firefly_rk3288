@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_rk3288.mk
+    $(LOCAL_DIR)/mokee.mk
