@@ -61,8 +61,6 @@ PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-MALLOC_IMPL := dlmalloc
-
 # Sensors
 BOARD_SENSOR_ST := false
 BOARD_SENSOR_MPU := true
