@@ -35,4 +35,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_PRODUCT=RK3288 \
     TARGET_DEVICE=RK3288
 
+# Resolution of boot animation
+TARGET_SCREEN_WIDTH := 1920
+TARGET_SCREEN_HEIGHT := 1080
+
 $(call inherit-product-if-exists, vendor/firefly/rk3288/device-vendor.mk)
