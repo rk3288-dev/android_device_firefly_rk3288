@@ -18,15 +18,6 @@ $(call inherit-product, device/rockchip/common/common.mk)
 
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
-PRODUCT_PACKAGES += \
-    Launcher3
-
-BOARD_SEPOLICY_DIRS += \
-    $(LOCAL_PATH)/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    service_contexts
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.rk30board:root/fstab.rk30board
 

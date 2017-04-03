@@ -28,6 +28,7 @@ TARGET_NO_BOOTLOADER := true
 # Platform
 TARGET_BOARD_PLATFORM := rk3288
 TARGET_BOARD_PLATFORM_GPU := mali-t760
+TARGET_BOARD_PLATFORM_PRODUCT := box
 
 # Architecture
 TARGET_ARCH := arm
@@ -40,6 +41,9 @@ TARGET_CPU_SMP := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/firefly/rk3288
 TARGET_KERNEL_CONFIG := firefly-rk3288_defconfig
+
+# HAX: Remove this once done
+BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
 
 # Battery
 BOARD_HAS_BATTERY := false

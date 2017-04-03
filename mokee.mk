@@ -14,10 +14,16 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+include device/firefly/rk3288/BoardConfig.mk
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/firefly/rk3288/device.mk)
+
+# Inherit some common MK stuff.
+$(call inherit-product, vendor/mk/config/common_full.mk)
 
 PRODUCT_NAME := mk_rk3288
 PRODUCT_DEVICE := rk3288
