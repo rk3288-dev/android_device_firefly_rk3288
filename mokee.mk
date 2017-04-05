@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/firefly/rk3288/device.mk)
 
 # Inherit some common MK stuff.
-$(call inherit-product, vendor/mk/config/common_full.mk)
+$(call inherit-product, vendor/mk/config/common_full_tv.mk)
 
 PRODUCT_NAME := mk_rk3288
 PRODUCT_DEVICE := rk3288
@@ -35,8 +35,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_PRODUCT=RK3288 \
     TARGET_DEVICE=RK3288
 
+# AAPT
+PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+PRODUCT_CHARACTERISTICS := tablet
+
 # Resolution of boot animation
-TARGET_SCREEN_WIDTH := 1920
-TARGET_SCREEN_HEIGHT := 1080
+TARGET_SCREEN_WIDTH := 405
+TARGET_SCREEN_HEIGHT := 720
 
 $(call inherit-product-if-exists, vendor/firefly/rk3288/device-vendor.mk)
