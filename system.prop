@@ -16,4 +16,4 @@ debug.nfc.fw_download=false
 debug.nfc.se=false
 
 ro.sf.hwrotation=0
-ro.sf.lcd_density=240
+ro.sf.lcd_density=160
