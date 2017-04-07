@@ -39,7 +39,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := tv
 
 # Resolution of boot animation
 TARGET_SCREEN_WIDTH := 405
