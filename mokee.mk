@@ -23,12 +23,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/firefly/rk3288/device.mk)
 
 # Inherit some common MK stuff.
-$(call inherit-product, vendor/mk/config/common_full_tv.mk)
+$(call inherit-product, vendor/mk/config/common_full.mk)
 
 PRODUCT_NAME := mk_rk3288
 PRODUCT_DEVICE := rk3288
 PRODUCT_BRAND := Firefly
-PRODUCT_MODEL := RK3288
+PRODUCT_MODEL := Firefly-RK3288
 PRODUCT_MANUFACTURER := Rockchip
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
