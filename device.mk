@@ -41,3 +41,10 @@ PRODUCT_PACKAGES += \
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/twrp.fstab
+
+# IR
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
+
+PRODUCT_PACKAGES += \
+    consumerir.rk3288
