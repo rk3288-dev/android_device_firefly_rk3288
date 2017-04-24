@@ -1,19 +1,21 @@
-# Android fstab file.
-#<src>                                       <mnt_point>         <type>    <mnt_flags and options>      <fs_mgr_flags>
-/dev/block/platform/ff0f0000.rksdmmc/by-name/user                  /mnt/internal_sd     vfat            defaults                  defaults
-/dev/block/mmcblk1p1                                               /mnt/external_sd     vfat            /dev/block/mmcblk1        defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/system                /system              ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/cache                 /cache               ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/metadata              /metadata            ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/userdata              /data                ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/cust                  /cust                ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/custom                /custom              ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/radical_update        /radical_update      ext4            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/misc                  /misc                emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/uboot                 /uboot               emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/charge                /charge              emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/resource              /resource            emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/parameter             /parameter           emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/boot                  /boot                emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/recovery              /recovery            emmc            defaults                  defaults
-/dev/block/platform/ff0f0000.rksdmmc/by-name/backup                /backup              emmc            defaults                  defaults
+# mount point       fstype      device      [device2]
+
+/parameter          emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/parameter      flags=backup=1
+/uboot              emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/uboot
+/misc               emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/misc
+/resource           emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/resource       flags=backup=1
+/kernel             emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/kernel         flags=backup=1
+/boot               emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/boot           flags=backup=1
+/recovery           emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/recovery       flags=backup=1
+/backup             emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/backup
+/cache              ext4        /dev/block/platform/ff0f0000.rksdmmc/by-name/cache
+/kpanic             emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/kpanic
+/system             ext4        /dev/block/platform/ff0f0000.rksdmmc/by-name/system
+/metadata           ext4        /dev/block/platform/ff0f0000.rksdmmc/by-name/metadata
+/baseparamer        emmc        /dev/block/platform/ff0f0000.rksdmmc/by-name/baseparamer
+/data               ext4        /dev/block/platform/ff0f0000.rksdmmc/by-name/userdata
+/radical_update     ext4        /dev/block/platform/ff0f0000.rksdmmc/by-name/radical_update
+/internal_sd        vfat        /dev/block/platform/ff0f0000.rksdmmc/by-name/user
+
+/external_sd        vfat        /dev/block/mmcblk1p1                        flags=storage;wipeingui;removable
+/usb-otg            vfat        /dev/block/sda1         /dev/block/sda1     flags=storage;wipeingui;removable
