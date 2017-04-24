@@ -1,0 +1,10 @@
+# name      size (512 bytes)
+uboot       8192
+misc        8192
+resource    32768
+kernel      32768
+boot        65536
+recovery    65536
+cache       262144
+system      2097152
+userdata    -

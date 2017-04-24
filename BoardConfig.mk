@@ -25,6 +25,8 @@ BOARD_VENDOR := rockchip
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+TARGET_PARAMETERS_MTDPARTS := $(DEVICE_PATH)/mtdparts.txt
+
 # Platform
 TARGET_BOARD_PLATFORM := rk3288
 TARGET_BOARD_PLATFORM_GPU := mali-t760
@@ -43,7 +45,7 @@ TARGET_KERNEL_SOURCE := kernel/firefly/rk3288
 TARGET_KERNEL_CONFIG := firefly-rk3288_defconfig
 
 # HAX: Remove this once done
-BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Battery
 BOARD_HAS_BATTERY := false
