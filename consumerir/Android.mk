@@ -1,5 +1,4 @@
-#
-# Copyright 2014 The Android Open-Source Project
+# Copyright (C) 2013 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,20 +11,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product, device/rockchip/common/common.mk)
+# HAL module implementation stored in
+# hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 
-$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+LOCAL_PATH := $(call my-dir)
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.rk30board:root/fstab.rk30board
+include $(CLEAR_VARS)
 
-$(call inherit-product, device/rockchip/common/samba/rk31_samba.mk)
+LOCAL_MODULE := consumerir.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_SRC_FILES := consumerir.c
+LOCAL_SHARED_LIBRARIES := liblog libcutils
+LOCAL_MODULE_TAGS := optional
 
-# IR
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
-
-PRODUCT_PACKAGES += \
-    consumerir.rk3288
+include $(BUILD_SHARED_LIBRARY)
