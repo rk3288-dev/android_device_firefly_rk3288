@@ -22,3 +22,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.rk30board:root/fstab.rk30board
 
 $(call inherit-product, device/rockchip/common/samba/rk31_samba.mk)
+
+# GPS
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml
+
+PRODUCT_PACKAGES += \
+    gps.rk3288
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.android.gps=ttyS3 \
+    ro.kernel.android.gpsttybaud=9600
