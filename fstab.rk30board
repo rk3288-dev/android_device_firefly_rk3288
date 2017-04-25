@@ -3,12 +3,18 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/dev/block/platform/ff0f0000.rksdmmc/by-name/system     /system     ext4      ro,noatime,nodiratime,noauto_da_alloc                                 wait
+/dev/block/platform/ff0f0000.rksdmmc/by-name/parameter  /parameter  emmc      defaults      recoveryonly
+/dev/block/platform/ff0f0000.rksdmmc/by-name/uboot      /uboot      emmc      defaults      recoveryonly
+/dev/block/platform/ff0f0000.rksdmmc/by-name/misc       /misc       emmc      defaults      defaults
+/dev/block/platform/ff0f0000.rksdmmc/by-name/resource   /resource   emmc      defaults      recoveryonly
+/dev/block/platform/ff0f0000.rksdmmc/by-name/kernel     /kernel     emmc      defaults      recoveryonly
+/dev/block/platform/ff0f0000.rksdmmc/by-name/boot       /boot       emmc      defaults      recoveryonly
+/dev/block/platform/ff0f0000.rksdmmc/by-name/recovery   /recovery   emmc      defaults      recoveryonly
 /dev/block/platform/ff0f0000.rksdmmc/by-name/cache      /cache      f2fs      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard               wait,check,formattable
 /dev/block/platform/ff0f0000.rksdmmc/by-name/cache      /cache      ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard               wait,check,formattable
+/dev/block/platform/ff0f0000.rksdmmc/by-name/system     /system     ext4      ro,noatime,nodiratime,noauto_da_alloc                                 wait
 /dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       f2fs      noatime,nodiratime,nosuid,nodev                                       wait,formattable,encryptable=footer
 /dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard,errors=panic  wait,formattable,encryptable=footer
-/dev/block/platform/ff0f0000.rksdmmc/by-name/misc       /misc       emmc      defaults                                                              defaults
 
 # SD cards
 /devices/ff0c0000.rksdmmc/mmc_host/mmc      auto    vfat    defaults    wait,voldmanaged=sdcard1:auto,encryptable=footer
