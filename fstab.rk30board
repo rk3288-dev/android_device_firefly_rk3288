@@ -13,8 +13,8 @@
 /dev/block/platform/ff0f0000.rksdmmc/by-name/cache      /cache      f2fs      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard               wait,check,formattable
 /dev/block/platform/ff0f0000.rksdmmc/by-name/cache      /cache      ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard               wait,check,formattable
 /dev/block/platform/ff0f0000.rksdmmc/by-name/system     /system     ext4      ro,noatime,nodiratime,noauto_da_alloc                                 wait
-/dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       f2fs      noatime,nodiratime,nosuid,nodev                                       wait,formattable,encryptable=footer
-/dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard,errors=panic  wait,formattable,encryptable=footer
+/dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       f2fs      noatime,nodiratime,nosuid,nodev                                       wait,formattable,encryptable=footer,length=-16384
+/dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard,errors=panic  wait,formattable,encryptable=footer,length=-16384
 
 # SD cards
 /devices/ff0c0000.rksdmmc/mmc_host/mmc*     auto    auto    defaults    voldmanaged=sdcard1:auto,encryptable=userdata
