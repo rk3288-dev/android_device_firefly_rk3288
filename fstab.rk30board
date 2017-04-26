@@ -17,7 +17,7 @@
 /dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard,errors=panic  wait,formattable,encryptable=footer,length=-16384
 
 # SD cards
-/devices/ff0c0000.rksdmmc/mmc_host/mmc*     auto    auto    defaults    voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/ff0c0000.rksdmmc/mmc_host/mmc*     auto    auto    defaults    wait,voldmanaged=sdcard1:auto,encryptable=userdata
 
 # USB disks
 /devices/*.usb/usb*                         auto    auto    defaults    voldmanaged=usb:auto
