@@ -17,11 +17,9 @@
 /dev/block/platform/ff0f0000.rksdmmc/by-name/userdata   /data       ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard,errors=panic  wait,formattable,encryptable=footer
 
 # SD cards
-/devices/ff0c0000.rksdmmc/mmc_host/mmc      auto    vfat    defaults    wait,voldmanaged=sdcard1:auto,encryptable=footer
+/devices/ff0c0000.rksdmmc/mmc_host/mmc*     auto    auto    defaults    voldmanaged=sdcard1:auto,encryptable=userdata
 
-# non box product,configuration to the first item, will filter out left
-/devices/ff580000.usb           /mnt/usb_storage    vfat    defaults    voldmanaged=usb_storage:auto,encryptable=footer
-/devices/ff500000.usb           /mnt/usb_storage    vfat    defaults    voldmanaged=usb_storage:auto,encryptable=footer
-/devices/ff540000.usb           /mnt/usb_storage    vfat    defaults    voldmanaged=usb_storage:auto,encryptable=footer
+# USB disks
+/devices/*.usb/usb*                         auto    auto    defaults    voldmanaged=usb:auto
 
 /dev/block/zram0    none    swap    defaults    zramsize=533413200
