@@ -82,5 +82,6 @@ TW_THEME := landscape_mdpi
 TW_EXTRA_LANGUAGES := true
 TW_NO_BATT_PERCENT := true
 TW_NO_SCREEN_TIMEOUT := true
+TW_INCLUDE_CRYPTO := true
 
 TWRP_INCLUDE_LOGCAT := true
