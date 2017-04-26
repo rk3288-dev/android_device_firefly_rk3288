@@ -47,6 +47,9 @@ TARGET_KERNEL_CONFIG := firefly-rk3288_defconfig
 # HAX: Remove this once done
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
+# Filesystem
+TARGET_USERIMAGES_USE_F2FS := true
+
 # Battery
 BOARD_HAS_BATTERY := false
 
