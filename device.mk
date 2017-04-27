@@ -34,6 +34,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.gps=ttyS3 \
     ro.kernel.android.gpsttybaud=9600
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.rk3288
+
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/twrp.fstab
